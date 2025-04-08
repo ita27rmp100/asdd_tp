@@ -56,6 +56,7 @@ int lenQ(Queue Q){
     }
     return l;
 }
+    // display
 void dispQ(Queue Q){
     int i=1;
     node* temp = Q.front;
