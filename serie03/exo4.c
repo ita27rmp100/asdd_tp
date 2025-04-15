@@ -2,41 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-// definition
-#define max 100
-typedef struct node
-    {
-        int data;
-        struct node *next;
-    }node;
-typedef struct{
-        node *top;
-    }Stack;
-// implementation
-void CreateStack(Stack *S){
-    S->top = NULL;
-}
-bool isEmpty(Stack *S){
-    return S->top==NULL;
-}
-void push(Stack *S,int *val){
-    node *p = (node*)malloc(sizeof(node));
-    p->next = S->top; 
-    p->data = *val;
-    S->top = p;
-    printf("VALUE ADDED \n");
-}
-void pop(Stack *S,int *c){
-    if(isEmpty(S)){
-        printf("Nothing to pop it");
-    }
-    else{
-        node *p = S->top;
-        *c = S->top->data;
-        S->top = S->top->next;
-        free(p);
-    }
-}
+#include "stack.h"
 // concerned function
     // S1 into S2
 void s1Tos2(Stack *S1,Stack *S2){
