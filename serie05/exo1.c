@@ -8,7 +8,6 @@ typedef struct Node {
 } Node;
 
 // The functions
-
 Node* CreateNode(int val) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = val;
@@ -66,4 +65,9 @@ int TreeDepth(Node* root) {
     int leftDepth = TreeDepth(root->left);
     int rightDepth = TreeDepth(root->right);
     return 1 + (leftDepth > rightDepth ? leftDepth : rightDepth);
+}
+
+int main(){
+
+    return 0;
 }

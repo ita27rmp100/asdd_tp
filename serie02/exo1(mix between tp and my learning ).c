@@ -1,6 +1,6 @@
+//Note: This solution is a mix between a practice of what I have learned and the task.
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct Node
 {
     int data;
@@ -56,18 +56,13 @@ void freell(Node *head){
     }
     printf("Freeing done !");
 }
-
 int main(){
     Node *head = NULL;
     Node *first = NULL , *second = NULL ;
-
     head = insertbeg(head,10);
     first = insertend(head,30);
     second = insertend(head,50);
-
     display(head);
-
     freell(head);
-
     return 0;
 }

@@ -20,6 +20,5 @@ int isPalindrome(char str[]) {
 int main(){
     char word[] = "madam";
     printf("Is \"%s\" a palindrome? %s\n", word, isPalindrome(word) ? "Yes" : "No");
-
     return 0;
 }

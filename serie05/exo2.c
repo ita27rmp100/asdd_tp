@@ -7,7 +7,12 @@ typedef struct Node {
     int data;
     struct Node *left , *right;
 } Node;
-
+Node* CreateNode(int val) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = val;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
 // Insert into BST
 Node* Insert(Node* root, int value) {
     if (!root) return CreateNode(value);
@@ -56,4 +61,8 @@ Node* Delete(Node* root, int value) {
         root->right = Delete(root->right, temp->data);
     }
     return root;
+}
+int main(){
+
+    return 0;
 }

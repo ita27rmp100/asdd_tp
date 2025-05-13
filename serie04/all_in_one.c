@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-// Exercise 01: Recursive exponentiation
+//exo1: Recursive exponentiation
 int power(int base, int exp) {
     if (exp == 0)
         return 1;
     return base * power(base, exp - 1);
 }
 
-// Exercise 02: Decimal to Binary using recursion
+//exo2: dec to bin using recursion
 void DecToBin(int n) {
     if (n == 0)
         return;
@@ -16,12 +16,11 @@ void DecToBin(int n) {
     printf("%d", n % 2);
 }
 
-// Exercise 03: Reverse a linked list using recursion
+//exo3:recursion reverse de LLL
 struct Node {
     int data;
     struct Node* next;
 };
-
 void reverse(struct Node** head_ref) {
     struct Node* first;
     struct Node* rest;
@@ -36,8 +35,7 @@ void reverse(struct Node** head_ref) {
     first->next = NULL;
     *head_ref = rest;
 }
-
-// Helper to print linked list
+// fonction supplementaire pour afficher le contenu de LLC 
 void printList(struct Node* head) {
     while (head != NULL) {
         printf("%d -> ", head->data);
@@ -45,7 +43,6 @@ void printList(struct Node* head) {
     }
     printf("NULL\n");
 }
-
 // exo4
 int isPalindromeHelper(char str[], int start, int end) {
     if (start >= end)
@@ -54,21 +51,19 @@ int isPalindromeHelper(char str[], int start, int end) {
         return 0;
     return isPalindromeHelper(str, start + 1, end - 1);
 }
-
 int isPalindrome(char str[]) {
     int len = strlen(str);
     return isPalindromeHelper(str, 0, len - 1);
 }
-
-// Exo05
+//exo5 : max val in arr
+    // recursive
 int MaxRec(int arr[], int n) {
     if (n == 1)
         return arr[0];
     int max = MaxRec(arr, n - 1);
     return (arr[n - 1] > max) ? arr[n - 1] : max;
 }
-
-// Iterative Max using goto and labels
+    // iterative with goto
 int MaxGoto(int arr[], int n) {
     int i = 0;
     int max = arr[0];
@@ -85,14 +80,12 @@ int MaxGoto(int arr[], int n) {
 int main() {
     // Test 01
     printf("Power(2, 5): %d\n", power(2, 5));
-
     // Test 02
     int num = 10;
     printf("Binary of %d: ", num);
     if (num == 0) printf("0");
     else DecToBin(num);
     printf("\n");
-
     // Test Exercise 03
     struct Node n3 = {3, NULL};
     struct Node n2 = {2, &n3};
@@ -103,11 +96,9 @@ int main() {
     reverse(&head);
     printf("Reversed list: ");
     printList(head);
-
     // Test Exercise 04
     char word[] = "madam";
     printf("Is \"%s\" a palindrome? %s\n", word, isPalindrome(word) ? "Yes" : "No");
-
     // Test Exercise 05
     int arr[] = {5, 1, 9, 2, 7};
     int size = sizeof(arr) / sizeof(arr[0]);
